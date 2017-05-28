@@ -5,7 +5,7 @@ This repo contains files required to build and run a personalized Jenkins instan
 ## How to run?
 ```sh
 # set the port on which it should run
-$ echo "PORT=6000" > .env
+$ echo "PORT=8080" > .env
 
 $ docker-compose build
 
