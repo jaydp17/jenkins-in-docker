@@ -6,4 +6,6 @@ ENV JAVA_OPTS="-Xmx8192m"
 
 COPY setup-docker-and-start-jenkins.sh /
 
+USER root
+
 ENTRYPOINT ["/setup-docker-and-start-jenkins.sh"]
