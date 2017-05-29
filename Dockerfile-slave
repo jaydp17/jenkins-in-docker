@@ -1,0 +1,9 @@
+FROM evarga/jenkins-slave
+
+LABEL maintainer Jaydeep Solanki <jaydp17@gmail.com> (https://jaydp.com)
+
+RUN mkdir /home/jenkins/.ssh
+
+COPY data/.ssh/id_rsa data/.ssh/id_rsa.pub /home/jenkins/.ssh/
+
+RUN chmod 600 /home/jenkins/.ssh/id_rsa /home/jenkins/.ssh/id_rsa.pub

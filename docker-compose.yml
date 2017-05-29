@@ -1,13 +1,15 @@
 version: '3.2'
-services:
-  jenkins:
-    build: .
-    privileged: true
 
+services:
+
+  master:
+    build:
+      context: .
+      dockerfile: Dockerfile-master
+    privileged: true
     ports:
       - "${PORT}:8080"
       - "50000:50000"
-    
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - type: bind
