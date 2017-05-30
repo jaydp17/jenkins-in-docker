@@ -6,6 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-master
+    image: jenkins-master
     privileged: true
     ports:
       - "${PORT}:8080"
