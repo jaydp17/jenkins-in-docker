@@ -1,4 +1,6 @@
-# Jenkins setup Using Docker 🐳
+<img src="https://wiki.jenkins-ci.org/download/attachments/78676506/docker-jenkins.png" alt="Jenkins using Docker" width="180" title="Jenkins using Docker" align="right" />
+
+# Jenkins setup Using Docker
 
 This repo contains files required to build and run a personalized Jenkins instance.
 
