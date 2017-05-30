@@ -23,7 +23,7 @@ $ docker-compose -f docker-compose.slave.yml build
 ```
 
 ### How to configure Jenkins to use this Docker image as slave?
-// Coming Soon
+Refer to [Docker in Jenkins](DOCKER-IN-JENKINS.md)
 
 ## How to check logs?
 ```sh
