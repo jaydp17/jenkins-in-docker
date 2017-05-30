@@ -3,6 +3,7 @@
 This repo contains files required to build and run a personalized Jenkins instance.
 
 ## How to run?
+### Jenkins Master
 ```sh
 # set the port on which it should run
 $ echo "PORT=8080" > .env
@@ -11,6 +12,18 @@ $ docker-compose build
 
 $ docker-compose up -d
 ```
+
+**Tip:** When deploying this on cloud make sure you have the port on which Jenkins is running open and port `50000` as that's used by Jenkins to connect to slaves.
+
+
+### Build Jenkins Slaves
+```sh
+# this will create a test slave image named jenkins-slave
+$ docker-compose -f docker-compose.slave.yml build
+```
+
+### How to configure Jenkins to use this Docker image as slave?
+// Coming Soon
 
 ## How to check logs?
 ```sh
