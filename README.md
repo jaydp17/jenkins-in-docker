@@ -1,6 +1,9 @@
 <img src="https://wiki.jenkins-ci.org/download/attachments/78676506/docker-jenkins.png" alt="Jenkins using Docker" width="180" title="Jenkins using Docker" align="right" />
 
 # Jenkins master/slave with Docker
+[![Travis](https://img.shields.io/travis/jaydp17/jenkins-in-docker.svg)](https://travis-ci.org/jaydp17/jenkins-in-docker)
+[![Image Stats](https://images.microbadger.com/badges/image/jaydp17/jenkins-master.svg)](https://hub.docker.com/r/jaydp17/jenkins-master)
+[![license](https://img.shields.io/github/license/jaydp17/jenkins-in-docker.svg)]()
 
 jenkins-in-docker a.k.a [jaydp17/jenkins-master](https://hub.docker.com/r/jaydp17/jenkins-master) sets up a container running Jenkins master that can use the host docker engine to create/connect to Jenkins slaves running as containers.
 
