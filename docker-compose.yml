@@ -3,9 +3,7 @@ version: '3.2'
 services:
 
   master:
-    build:
-      context: .
-      dockerfile: Dockerfile-master
+    build: .
     image: jenkins-master
     privileged: true
     ports:
