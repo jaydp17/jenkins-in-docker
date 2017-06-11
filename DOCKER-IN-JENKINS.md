@@ -31,7 +31,10 @@ Add a docker template
 ![Docker Template](https://s13.postimg.org/5rulxe98n/add-docker-template.png)
 
 Fill in `Docker Image Name` & `Labels`
-![Docker Image Name](https://s2.postimg.org/hu93erkg9/docker-image-name.png)
+
+Here we are using [jaydp17/jenkins-slave](https://hub.docker.com/r/jaydp17/jenkins-slave/) as the slave image but there are various slave images available on Docker hub that could also be used.
+
+![Docker Image Name](https://s29.postimg.org/fx2mumt6v/docker-image-and-namev2.png)
 
 
 ## Run task in this slave

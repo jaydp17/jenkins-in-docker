@@ -17,14 +17,7 @@ $ docker-compose up -d
 
 **Tip:** When deploying this on cloud make sure you have the port on which Jenkins is running open and port `50000` as that's used by Jenkins to connect to slaves.
 
-
-### Build Jenkins Slaves
-```sh
-# this will create a test slave image named jenkins-slave
-$ docker-compose -f docker-compose.slave.yml build
-```
-
-### How to configure Jenkins to use this Docker image as slave?
+### How to configure Jenkins to use a Docker image as slave?
 Refer to [Docker in Jenkins](DOCKER-IN-JENKINS.md)
 
 ## How to check logs?

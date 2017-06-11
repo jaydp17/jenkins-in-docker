@@ -1,9 +1,0 @@
-version: '3.2'
-
-services:
-
-  slave:
-    build:
-      context: .
-      dockerfile: Dockerfile-slave
-    image: jenkins-slave
