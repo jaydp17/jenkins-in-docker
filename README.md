@@ -1,29 +1,55 @@
 <img src="https://wiki.jenkins-ci.org/download/attachments/78676506/docker-jenkins.png" alt="Jenkins using Docker" width="180" title="Jenkins using Docker" align="right" />
 
-# Jenkins setup Using Docker
+# Jenkins master/slave with Docker
 
-This repo contains files required to build and run a personalized Jenkins instance.
+jenkins-in-docker a.k.a [jaydp17/jenkins-master](https://hub.docker.com/r/jaydp17/jenkins-master) sets up a container running Jenkins master that can use the host docker engine to create/connect to Jenkins slaves running as containers.
 
-## How to run?
-### Jenkins Master
+It is built on top of the original [Jenkins image](https://hub.docker.com/_/jenkins/), thus whatever is possible with it is also possible with this image.
+
+## Usage
+To run it:
 ```sh
-# set the port on which it should run
-$ echo "PORT=8080" > .env
-
-$ docker-compose build
-
-$ docker-compose up -d
+$ docker run -d -p 8080:8080 -p 50000:50000 -v /var/run/docker.sock:/tmp/docker.sock:ro --privileged jaydp17/jenkins-master
 ```
 
-**Tip:** When deploying this on cloud make sure you have the port on which Jenkins is running open and port `50000` as that's used by Jenkins to connect to slaves.
+Or if you prefer docker-compose:volu
+```yml
+jenkins-master:
+  image: jaydp17/jenkins-master
+  privileged: true
+  ports:
+    - "8080:8080"
+    - "50000:50000"
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock:ro
+```
 
-### How to configure Jenkins to use a Docker image as slave?
+As with the base [Jenkins image](https://hub.docker.com/_/jenkins/) it stores the workspace in `/var/jenkins_home`. All Jenkins data lives in there - including plugins and configuration. You will probably want to make that a persistent volume (recommended)
+
+Example:
+```sh
+$ docker run -d -p 8080:8080 -p 50000:50000 -v /your/home:/var/jenkins_home -v /var/run/docker.sock:/tmp/docker.sock:ro --privileged jaydp17/jenkins-master
+```
+
+Example using docker-compose
+```yml
+jenkins-master:
+  image: jaydp17/jenkins-master
+  privileged: true
+  ports:
+    - "8080:8080"
+    - "50000:50000"
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock:ro
+    - /your/home:/var/jenkins_home
+```
+
+This will store the jenkins data in `/your/home` on the host.
+
+
+## How to configure Jenkins to use a Docker image as slave?
 Refer to [Docker in Jenkins](DOCKER-IN-JENKINS.md)
 
-## How to check logs?
-```sh
-$ docker-compose logs -f
-```
 
 ## Troubleshooting
 
