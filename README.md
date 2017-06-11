@@ -12,7 +12,7 @@ To run it:
 $ docker run -d -p 8080:8080 -p 50000:50000 -v /var/run/docker.sock:/tmp/docker.sock:ro --privileged jaydp17/jenkins-master
 ```
 
-Or if you prefer docker-compose:volu
+Or if you prefer docker-compose:
 ```yml
 jenkins-master:
   image: jaydp17/jenkins-master
