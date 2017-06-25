@@ -3,11 +3,15 @@ sudo: required
 services:
   - docker
 
+env:
+  - JENKINS_VERSION: "2.46.3"
+
 script:
-  - docker build -t jaydp17/jenkins-master:latest .
+  - docker build -t jaydp17/jenkins-master:latest -t jaydp17/jenkins-master:$JENKINS_VERSION .
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     docker push jaydp17/jenkins-master:latest;
+    docker push jaydp17/jenkins-master:$JENKINS_VERSION;
     fi
