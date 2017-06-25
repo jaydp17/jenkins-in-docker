@@ -1,4 +1,4 @@
-FROM jenkins:2.46.3
+FROM jenkins:2.60.1
 
 LABEL maintainer Jaydeep Solanki <jaydp17@gmail.com> (https://jaydp.com)
 
