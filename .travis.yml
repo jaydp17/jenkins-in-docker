@@ -4,7 +4,7 @@ services:
   - docker
 
 env:
-  - JENKINS_VERSION: "2.60.2"
+  - JENKINS_VERSION: "2.73.1"
 
 script:
   - docker build -t jaydp17/jenkins-master:latest -t jaydp17/jenkins-master:$JENKINS_VERSION .
